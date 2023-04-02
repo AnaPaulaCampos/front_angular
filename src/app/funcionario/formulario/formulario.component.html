@@ -1,1 +1,16 @@
-<p>formulario works!</p>
+<form [formGroup]="formCadastroFuncionario" (ngSubmit)="salvar()">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="nome" aria-describedby="emailHelp" formControlName="nome">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">CPF</label>
+      <input type="number" class="form-control" id="exampleInputPassword1" formControlName="cpf">
+    </div>
+    <div class="mb-3 form-check">
+      <input type="text" class="form-control" id="exampleCheck1"formControlName="email">
+      <label class="text" for="exampleCheck1" >Email</label>
+    </div>
+    <button type="submit" class="btn btn-primary">salvar</button>
+  </form>

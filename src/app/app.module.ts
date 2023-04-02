@@ -8,6 +8,8 @@ import { FormularioComponent } from './funcionario/formulario/formulario.compone
 import { ListagemFuncionariosComponent } from './funcionario/listagem-funcionarios/listagem-funcionarios.component';
 import { ProdutosComponent } from './produtos/produtos/produtos.component';
 import { VendasComponent } from './vendas/vendas/vendas.component';
+import { HomeComponent } from './home/home.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -16,12 +18,15 @@ import { VendasComponent } from './vendas/vendas/vendas.component';
     FormularioComponent,
     ListagemFuncionariosComponent,
     ProdutosComponent,
-    VendasComponent
+    VendasComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
