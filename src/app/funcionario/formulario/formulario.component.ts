@@ -41,7 +41,8 @@ private url = "http://localhost:3000/funcionario";
 public salvar(){
 
   console.log(this.formCadastroFuncionario.value);
- this.http.post(this.url)
+ this.http.post(this.url).subscribe({
+ })
 }
 
 }
