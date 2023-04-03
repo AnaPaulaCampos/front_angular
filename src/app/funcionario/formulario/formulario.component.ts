@@ -25,10 +25,7 @@ ngOnInit(){
   this.createForm(new Funcionario());
   this.getfuncionarios();
   
-}
-  createForm(arg0: Funcionario) {
-    throw new Error('Method not implemented.');
-  }
+
   getfuncionarios() {
     throw new Error('Method not implemented.');
   }
