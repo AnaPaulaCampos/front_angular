@@ -1,10 +1,6 @@
-
-import { FormGroup, FormControl } from '@angular/forms'
-import { Funcionario } from '../funcionario';
-import { NgForm } from '@angular/forms';
-import { FuncionarioService } from 'src/app/services/funcionario.service';
 import { Component, OnInit } from '@angular/core';
-
+import { FormBuilder, FormControl, FormGroup, NgForm } from '@angular/forms';
+import { Funcionario } from '../funcionario';
 
 @Component({
   selector: 'app-formulario',
@@ -12,59 +8,38 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent implements OnInit {
-
-  funcionario = {} as Funcionario;
-  funcionarios!: Funcionario[];
-  
-  
+funcionario: any;
+saveFuncionario(_t12: NgForm) {
+throw new Error('Method not implemented.');
+}
   formFuncionario!: FormGroup;
 
-  constructor(private funcionarioService: FuncionarioService){}
+  constructor(private formBuilder: FormBuilder) { }
 
-ngOnInit(){
-  this.createForm(new Funcionario());
-  this.getfuncionarios();
-  
-
-  getfuncionarios() {
-    throw new Error('Method not implemented.');
+  ngOnInit() {
+    this.createForm(new Funcionario());
   }
-// defini se um funcionario será criado ou atualizado
-saveFuncionario(form: NgForm) {
-  if (this.funcionario.id !== undefined) {
-    this.funcionarioService.updateFuncionario(this.funcionario).subscribe(() => {
-      this.cleanForm(form);
-    });
-  } else {
-    this.funcionarioService.saveFuncionario(this.funcionario).subscribe(() => {
-      this.cleanForm(form);
-    });
+  onSubmit() {
+    // aqui você pode implementar a logica para fazer seu formulário salvar
+    console.log(this.formFuncionario.value);
+  
+    // chamando a função createForm para limpar os campos na tela
+    this.createForm(new Funcionario());
+  }
+  createForm(funcionario: Funcionario) {
+    this.formFuncionario =  new FormGroup({
+      id: new FormControl (funcionario.id),
+      nome: new FormControl (funcionario.nome),
+      tipo:new FormControl(funcionario.tipo),
+      cpf: new FormControl (funcionario.cpf),
+      email: new FormControl (funcionario.email),
+      telefone: new FormControl (funcionario.telefone),
+      endereco: new FormControl (funcionario.endereco),
+      numero: new FormControl (funcionario.numero),
+      cidade: new FormControl (funcionario.cidade),
+      uf: new FormControl (funcionario.uf),
+      cep: new FormControl (funcionario.cep),
+      dataNascimento: new FormControl (funcionario.dataNascimento)
+    })
   }
 }
-    // Chama o serviço para obtém todos os funcionarios
-    getFuncionarios() {
-      this.funcionarioService.getFuncionarios().subscribe((funcionarios: Funcionario[]) => {
-        this.funcionarios = funcionarios;
-      });
-    }
-    // deleta um funcionario
-  deleteFuncionario(funcionario: Funcionario) {
-    this.funcionarioService.deleteFuncionario(this.funcionario).subscribe(() => {
-      this.getFuncionarios();
-    });
-  }
-  // copia o funcionario para ser editado.
-  editFuncionario(funcionario: Funcionario) {
-    this.funcionario = { ...this.funcionario };
-  }
-    // limpa o formulario
-    cleanForm(form: NgForm) {
-      this.getFuncionarios();
-      form.resetForm();
-      this.funcionario = {} as Funcionario;
-    }
-    onSubmit(){
-      console.log(this.formFuncionario.value)
-    }
-  }
-  

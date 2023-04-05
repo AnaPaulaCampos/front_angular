@@ -1,0 +1,43 @@
+
+.container {
+  margin-top: 30px;
+}
+
+.add-produto {
+  margin-bottom: 30px;
+}
+
+.list-produto  {
+  margin-bottom: 50px;
+}
+
+.btn-add-produto  {
+  margin-right: 10px;
+}
+.submit { width:100%; float:left; }
+
+.submit_btn {
+
+    float: left;
+    display: block;
+    padding: 5px 30px;
+    border: none;
+    outline: none;
+    background-color: #31a353;
+    color: #fff;
+    text-shadow: 0 0 5px rgb(0, 0, 0);
+    font-family: inherit;
+    font-size: 25px;
+    font-family:'open_sansregular';
+    border-radius: 6px;
+    margin: 20px auto;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.submit_btn:hover {
+
+    background-color: #444444;
+    transform: scale(1.03);
+
+}

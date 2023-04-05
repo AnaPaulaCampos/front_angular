@@ -1,1 +1,24 @@
-<p>produtos works!</p>
+<form [formGroup]="formProduto" (ngSubmit)="onSubmit()">
+    <div class="card add-produto">
+        <h5 class="card-header">Adicionar/Atualizar produto</h5>
+        <div class="card-body">
+              <div class="form-group">
+                  <label for="nome" class="form_label">Nome</label>
+                  <input type="text"  id="nome" name="nome"  required class="form-control"  placeholder="Digite o nome" formControlName="nome">
+                  </div>
+              <div class="form-group">
+                  <label for="descricao" class="form_label">Descrição</label>
+                  <input type="text" id="descricao" name="descricao"  required class="form-control" placeholder="Digite a descrição" formControlName="descricao">
+                                        
+              </div>
+              <div class="form-group" class="form_label">
+                  <label for="preco">Preço</label>
+                  <input type="number"  id="preco" name="preco"  required class="form-control" placeholder="Digite o preço" formControlName="preco">
+                 
+                  <div class="submit">
+
+                    <input type="hidden" name="acao" value="enviar">
+                    <button type="submit" name="Submit" class="submit_btn" >Cadastrar</button>
+                  
+                  </div>
+                
