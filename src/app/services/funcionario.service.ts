@@ -18,7 +18,12 @@ export class FuncionarioService  {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
-
+  create(funcionario: any): Observable<Funcionario> {
+    return this.httpClient.post<Funcionario>(this.url, JSON.stringify(funcionario), this.httpOptions)
+    .pipe(
+      catchError(this.handleError)
+    )
+  }  
    // Obtem todos os funcionarios
    getFuncionarios(): Observable<Funcionario[]>{
     return this.httpClient.get<Funcionario[]>(this.url)

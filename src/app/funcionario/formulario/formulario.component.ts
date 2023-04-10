@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, NgForm } from '@angular/forms';
 import { Funcionario } from '../funcionario';
+import { FuncionarioService } from 'src/app/services/funcionario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario',
@@ -14,17 +16,27 @@ throw new Error('Method not implemented.');
 }
   formFuncionario!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private servico: FuncionarioService, private router:Router) { }
 
   ngOnInit() {
     this.createForm(new Funcionario());
   }
-  onSubmit() {
+
+  salvar() {
     // aqui você pode implementar a logica para fazer seu formulário salvar
     console.log(this.formFuncionario.value);
-  
-    // chamando a função createForm para limpar os campos na tela
-    this.createForm(new Funcionario());
+
+    this.servico.create(this.formFuncionario.value).subscribe();
+
+    this.router.navigate(['listar'])
+
+    //this.servico.updateFuncionario(this.formFuncionario.value).subscribe();
+
+   // this.createForm(new Funcionario());
+  }
+  atualizar(){
+    this.router.navigate(['cadastrar'])
+
   }
   createForm(funcionario: Funcionario) {
     this.formFuncionario =  new FormGroup({

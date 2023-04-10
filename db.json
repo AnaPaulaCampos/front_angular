@@ -1,35 +1,35 @@
 {
-    "funcionario": [
-      {
-        "id": 1,
-        "nome": "Fulano de Tal",
-        "tipo": "vendedor",
-        "cpf": "12345678901",
-        "email": "fulano@gmail.com",
-        "telefone": "123456789",
-        "endereco": "Rua dos Bobos",
-        "numero": "0",
-        "cidade": "São Paulo",
-        "UF": "SP",
-        "CEP": "12345678",
-        "dataNascimento": "01/01/2000"
-      }
-    ],
-    "produto": [
-      {
-        "id": 1,
-        "nome": "Produto 1",
-        "descricao": "Descrição do produto 1",
-        "preco": 10
-      }
-    ],
-    "vendas": [
-      {
-        "id": 1,
-        "idFuncionario": 1,
-        "idProduto": 1,
-        "quantidade": 1,
-        "dataVenda": "01/01/2020"
-      }
-    ]
-  }
+  "funcionario": [
+    {
+      "id": 1,
+      "nome": "meu amor 22-22",
+      "tipo": "",
+      "cpf": "",
+      "email": "",
+      "telefone": 1,
+      "endereco": "",
+      "numero": 1,
+      "cidade": "",
+      "uf": "",
+      "cep": "",
+      "dataNascimento": null
+    }
+  ],
+  "produto": [
+    {
+      "id": 1,
+      "nome": "Produto 1",
+      "descricao": "Descrição do produto 1",
+      "preco": 10
+    }
+  ],
+  "vendas": [
+    {
+      "id": 1,
+      "idFuncionario": 1,
+      "idProduto": 1,
+      "quantidade": 1,
+      "dataVenda": "01/01/2020"
+    }
+  ]
+}
