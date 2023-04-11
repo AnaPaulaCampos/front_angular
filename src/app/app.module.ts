@@ -10,6 +10,7 @@ import { VendasComponent } from './vendas/vendas/vendas.component';
 import { HomeComponent } from './temas/home/home.component';
 import { FormsModule }   from '@angular/forms';
 import { FormularioComponent } from './funcionario/formulario/formulario.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -28,7 +29,9 @@ import { FormularioComponent } from './funcionario/formulario/formulario.compone
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
